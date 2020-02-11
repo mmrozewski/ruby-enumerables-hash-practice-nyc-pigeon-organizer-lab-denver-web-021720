@@ -30,7 +30,3 @@ def nyc_pigeon_organizer(data)
     all_pigeons
   end 
 end
-
-
-
-nyc_pigeon_organizer(pigeon_data)
