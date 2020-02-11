@@ -1,32 +1,41 @@
-def nyc_pigeon_organizer(data)
-  
-  all_pigeons = {}
-  
-  data.each do |descriptors, specifics|
-    specifics.each do |specifics, arr|
-      name.each do |name|
-        if  all_pigeons[name] == nil
-            all_pigeons[name] = {}
-            all_pigeons[name][descriptors] = []
-          else
-            all_pigeons[name][descriptors] = []
-          end 
-      end
-    end
-  end
-  all_pigeons.each do |name, specifics|
-    specifics.each do |hashval, arr|
-      data.each do |descriptors, specifics|
-        specifics.each do |val, arr|
-          
-          array.each do |elem|
-            if element == name && hashval == descriptors
-              all_pigeons[name][hashval] << val.to_s
-            end
-          end
-        end
-      end
-    end
-    all_pigeons
+def nyc_pigeon_organizer (data)
+  final = {}
+
+  data.each do |first_level, all_other|
+    all_other.each do |category, array|
+      array.each do |name|
+        final[name] = {:color => [], :gender => [], :lives => []}
+      end 
+    end 
   end 
+  x = final.keys
+  data[:color].each do |bird_color, name|
+    name.each do |bird_name|
+      x.each do |item|
+        if bird_name === item
+          final[item][:color] << bird_color.to_s
+        end 
+      end 
+    end 
+  end 
+  data[:gender].each do |gender, type|
+    type.each do |bird_name|
+      x.each do |item|
+        if bird_name === item
+          final[item][:gender] << gender.to_s
+        end 
+      end 
+    end 
+  end 
+  data[:lives].each do |location, name|
+    name.each do |bird_name|
+      x.each do |item|
+        if bird_name === item
+          final[item][:lives] << location
+        end 
+      end 
+    end 
+  end 
+  
+  return final 
 end
