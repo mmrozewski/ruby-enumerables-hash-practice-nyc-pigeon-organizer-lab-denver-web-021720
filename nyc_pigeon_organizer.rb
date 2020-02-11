@@ -5,7 +5,7 @@ def nyc_pigeon_organizer(data)
   data.each do |descriptors, specifics|
     specifics.each do |specifics, arr|
       name.each do |name|
-        if !all_pigeons[name]
+        if  all_pigeons[name] == nil
             all_pigeons[name] = {}
             all_pigeons[name][descriptors] = []
           else
